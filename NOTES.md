@@ -13,3 +13,10 @@
           - sell quantity of item (button to sell)
 
 
+## workflow
+
+  - make Header component
+  - add Header to App
+  - make hard coded Item component
+  - make hard coded ItemList component
+  - add Item and ItemList to App component
