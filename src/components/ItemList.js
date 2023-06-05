@@ -3,7 +3,10 @@ import Item from "./Item";
 
 function ItemList() {
   return (
-    <Item />
+    <Item 
+      name="Item Name"
+      origin = "Item Origin"
+      price = "Item Price"/>
   );
 }
 

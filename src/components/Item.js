@@ -1,16 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Item() {
-  const name = "Item Name";
-  const origin = "Item Origin";
-  const price = "Item Price";
+function Item(props) {
   return (
     <React.Fragment>
-      <h3>{name}</h3>
-      <h3>{origin}</h3>
-      <h3>{price}</h3>
+      <h3>{props.name}</h3>
+      <h3>{props.origin}</h3>
+      <h3>{props.price}</h3>
     </React.Fragment>
   );
+}
+
+Item.propTypes = {
+  name: PropTypes.string,
+  origin: PropTypes.string,
+  price: PropTypes.number,
 }
 
 export default Item;
