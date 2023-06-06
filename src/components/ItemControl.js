@@ -35,7 +35,55 @@ class ItemControl extends React.Component {
     })
   };
 
-  handleAddingItemToList = (newItem) => 
+  handleAddingNewItemToList = (newItem) => {
+    const newMainItemList = this.state.mainItemList.concat(newItem);
+    this.setState({
+      mainItemList: newMainItemList
+    });
+    this.handleClick()
+  };
+
+  handleEditClick = () => {
+    this.setState({stateName: 'editing'});
+  }
+
+  handleEditingItemInList = (itemToEdit) => {
+    const editedMainItemList = this.state.mainItemList
+          .filter(item => item.id !== this.state.selectedItem.id)
+          .concat(itemToEdit);
+    this.setState({
+      mainItemList: editedMainItemList,
+      stateName: 'list'
+    });
+  }
+
+
+
+
+  
+
+
+  render (){
+    let currentlyVisibleState = null;
+    let buttonText = null;
+    let addItemButton = null;
+
+    switch(this.state.stateName){
+      case 'itemDetail':
+        currentlyVisibleState = <ItemDetail
+           />
+    }
+
+    return (
+      <>
+        {currentlyVisibleState}
+        <button></button>
+      </>
+    )
+  }
+
+
+
 
 
 
