@@ -1,8 +1,6 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-
-
 class ItemControl extends React.Component {
 
   constructor(props) {
@@ -29,7 +27,6 @@ class ItemControl extends React.Component {
         nextState = 'list';
         break;
     }
-
     this.setState({
       stateName: nextState,
       selectedItem: nextSelectedItem
@@ -43,7 +40,6 @@ class ItemControl extends React.Component {
       stateName: 'itemDetails'
     });
   }
-
 
   handleAddingNewItemToList = (newItem) => {
     const newMainItemList = this.state.mainItemList.concat(newItem);
@@ -67,11 +63,6 @@ class ItemControl extends React.Component {
     });
   }
 
-
-
-
-
-  
 
 
   render (){
@@ -103,18 +94,10 @@ class ItemControl extends React.Component {
     return (
       <>
         {currentlyVisibleState}
-        <button></button>
+        <button onClick = {this.handleClick}>{buttonText}</button>
       </>
     )
   }
-
-
-
-
-
-
-
-
-
-
 }
+
+export default ItemControl;
