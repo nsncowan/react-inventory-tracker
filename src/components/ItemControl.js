@@ -1,4 +1,5 @@
 import React from "react";
+import ItemList from "./ItemList";
 
 
 
@@ -81,7 +82,22 @@ class ItemControl extends React.Component {
     switch(this.state.stateName){
       case 'itemDetail':
         currentlyVisibleState = <ItemDetail
-           />
+              item = {this.state.selectedItem}
+              onClickingEdit = {this.handleEditClick}/>;
+        buttonText = 'Return to Item List';
+        break;
+      case 'form':
+        currentlyVisibleState = <NewItemForm onNewItemCreation = {this.handleAddingNewItemToList}/>;
+        buttonText = 'Return to Item List';
+        break;
+      case 'itemList':
+        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} onItemSelection = {this.handleChangingSelectedItem}/>;
+        buttonText = null;
+        break;
+      default:
+        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} onItemSelection = {this.handleChangingSelectedItem}/>;
+        buttonText = null;
+        break;
     }
 
     return (
