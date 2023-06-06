@@ -35,6 +35,15 @@ class ItemControl extends React.Component {
     })
   };
 
+  handleChangingSelectedItem = (id) => {
+    const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
+    this.setState({
+      selectedItem: selectedItem,
+      stateName: 'itemDetails'
+    });
+  }
+
+
   handleAddingNewItemToList = (newItem) => {
     const newMainItemList = this.state.mainItemList.concat(newItem);
     this.setState({
@@ -56,6 +65,7 @@ class ItemControl extends React.Component {
       stateName: 'list'
     });
   }
+
 
 
 
