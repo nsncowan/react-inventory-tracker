@@ -49,7 +49,7 @@ class ItemControl extends React.Component {
     this.handleClick()
   };
 
-  handleEditClick = () => {
+  handleEditClickOrigin = () => {
     this.setState({stateName: 'editing'});
   }
 
@@ -74,7 +74,7 @@ class ItemControl extends React.Component {
       case 'itemDetail':
         currentlyVisibleState = <ItemDetail
               item = {this.state.selectedItem}
-              onClickingEdit = {this.handleEditClick}/>;
+              handleEditClickV1 = {this.handleEditClickOrigin}/>;
         buttonText = 'Return to Item List';
         break;
       case 'form':
