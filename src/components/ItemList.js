@@ -4,14 +4,15 @@ import PropTypes from "prop-types";
 
 function ItemList(props) {
   return (
-    <>
+    <React.Fragment>
       {props.itemList.map((item) => 
-          <Item 
+        <Item
+          changeSelectedItemV2 = {props.changeSelectedItemV1} 
           name={item.name}
           origin = {item.origin}
           price = {item.price}/>
-          )}
-    </>
+      )}
+    </React.Fragment>
   );
 }
 
