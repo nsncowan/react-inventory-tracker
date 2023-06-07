@@ -33,7 +33,7 @@ class ItemControl extends React.Component {
     })
   };
 
-  handleChangingSelectedItem = (id) => {
+  changeSelectedItemOrigin = (id) => {
     const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
     this.setState({
       selectedItem: selectedItem,
@@ -41,7 +41,7 @@ class ItemControl extends React.Component {
     });
   }
 
-  handleAddingNewItemToList = (newItem) => {
+  AddItemToListOrigin = (newItem) => {
     const newMainItemList = this.state.mainItemList.concat(newItem);
     this.setState({
       mainItemList: newMainItemList
@@ -78,15 +78,15 @@ class ItemControl extends React.Component {
         buttonText = 'Return to Item List';
         break;
       case 'form':
-        currentlyVisibleState = <NewItemForm onNewItemCreation = {this.handleAddingNewItemToList}/>;
+        currentlyVisibleState = <NewItemForm AddItemToListV1 = {this.AddItemToListOrigin}/>;
         buttonText = 'Return to Item List';
         break;
       case 'itemList':
-        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} onItemSelection = {this.handleChangingSelectedItem}/>;
+        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
         buttonText = null;
         break;
       default:
-        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} onItemSelection = {this.handleChangingSelectedItem}/>;
+        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
         buttonText = null;
         break;
     }

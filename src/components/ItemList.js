@@ -1,13 +1,23 @@
 import React from "react";
 import Item from "./Item";
+import PropTypes from "prop-types";
 
-function ItemList() {
+function ItemList(props) {
   return (
-    <Item 
-      name="Item Name"
-      origin = "Item Origin"
-      price = "Item Price"/>
+    <>
+      {props.itemList.map((item) => 
+          <Item 
+          name={item.name}
+          origin = {item.origin}
+          price = {item.price}/>
+          )}
+    </>
   );
 }
+
+ItemList.propTypes = {
+  itemList: PropTypes.array,
+  changeSelectedItemV1: PropTypes.func
+};
 
 export default ItemList;

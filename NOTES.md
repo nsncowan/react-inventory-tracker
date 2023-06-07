@@ -22,3 +22,10 @@
   - add ItemList to App component
   - lift hard-coded props to ItemList
   - access ItemList(parent) props in Item(child)
+
+
+## trial naming convention for passing props
+
+  - functionNameOrigin
+  - functionNameV1
+  - functionNameV2 ...etc
