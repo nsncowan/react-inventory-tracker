@@ -3,68 +3,69 @@ import ItemList from "./ItemList";
 import NewItemForm from "./NewItemForm";
 import ItemDetail from "./ItemDetail";
 
+
+
+
 class ItemControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      stateName: 'list',
+      formVisibleOnPage: false,
       mainItemList: [],
       selectedItem: null,
+      editing: false
     };
   }
 
   handleClick = () => {
-    let nextState = null;
-    let nextSelectedItem = this.state.selectedItem;
-    switch(this.state.stateName) {
-      case 'itemDetail':
-        nextState = 'list'
-        nextSelectedItem = null;
-        break;
-      case 'form':
-        nextState = 'list';
-        break;
-      case 'list':
-        nextState = 'form';
-        break;
-      default:
-        nextState = 'list';
-        break;
+    if (this.state.selectedItem != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedItem: null,
+        editing: false
+      });
     }
-    this.setState({
-      stateName: nextState,
-      selectedItem: nextSelectedItem
-    })
+    else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
   };
-
-  changeSelectedItemOrigin = (id) => {
-    const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
-    this.setState({
-      selectedItem: selectedItem,
-      stateName: 'itemDetails'
-    });
+  
+  handleEditClickOrigin = () => {
+    this.setState({editing: true});
   }
 
   AddItemToListOrigin = (newItem) => {
     const newMainItemList = this.state.mainItemList.concat(newItem);
     this.setState({
-      mainItemList: newMainItemList
+      mainItemList: newMainItemList,
+      formVisibleOnPage: false
     });
-    this.handleClick()
   };
 
-  handleEditClickOrigin = () => {
-    this.setState({stateName: 'editing'});
+  changeSelectedItemOrigin = (id) => {
+    const selectedItem = this.state.mainItemList.filter(item => item.id === id)[0];
+    this.setState({selectedItem: selectedItem});
   }
 
-  handleEditingItemInList = (itemToEdit) => {
+  deleteItemOrigin = (id) => {
+    const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
+    this.setState({
+      mainItemList: newMainItemList,
+      selectedItem: null
+    });
+  }
+
+  editItemOrigin = (itemToEdit) => {
     const editedMainItemList = this.state.mainItemList
           .filter(item => item.id !== this.state.selectedItem.id)
           .concat(itemToEdit);
     this.setState({
       mainItemList: editedMainItemList,
-      stateName: 'list'
+      editing: false,
+      selectedItem: null
     });
   }
 
