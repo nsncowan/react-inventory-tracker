@@ -10,6 +10,7 @@ function EditItemForm (props) {
     props.editItemV1({
       name: event.target.names.value,
       origin: event.target.origin.value,
+      roast: event.target.roast.value,
       price: event.target.price.value,
       id: item.id
     });
@@ -19,7 +20,7 @@ function EditItemForm (props) {
     <React.Fragment>
       <ReusableForm 
         editItemFormSubmissionV1={editItemFormSubmissionOrigin}
-        buttonText="Update Ticket" />
+        buttonText="Update Item" />
     </React.Fragment>
   );
 }
