@@ -1,5 +1,7 @@
 import React from "react";
 import ItemList from "./ItemList";
+import NewItemForm from "./NewItemForm";
+import ItemDetail from "./ItemDetail";
 
 class ItemControl extends React.Component {
 
@@ -71,7 +73,7 @@ class ItemControl extends React.Component {
     let addItemButton = null;
 
     switch(this.state.stateName){
-      case 'itemDetail':
+      case 'itemDetails':
         currentlyVisibleState = <ItemDetail
               item = {this.state.selectedItem}
               handleEditClickV1 = {this.handleEditClickOrigin}/>;
@@ -83,11 +85,11 @@ class ItemControl extends React.Component {
         break;
       case 'itemList':
         currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
-        buttonText = null;
+        buttonText = 'Add an Item';
         break;
       default:
         currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
-        buttonText = null;
+        buttonText = 'Add an Item';
         break;
     }
 

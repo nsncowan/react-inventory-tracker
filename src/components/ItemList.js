@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 function ItemList(props) {
   return (
     <React.Fragment>
+      <hr />
       {props.itemList.map((item) => 
         <Item
           changeSelectedItemV2 = {props.changeSelectedItemV1} 
