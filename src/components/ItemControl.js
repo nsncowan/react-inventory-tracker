@@ -74,35 +74,36 @@ class ItemControl extends React.Component {
   render (){
     let currentlyVisibleState = null;
     let buttonText = null;
-    let addItemButton = null;
 
-    switch(this.state.stateName){
-      case 'itemDetails':
-        currentlyVisibleState = <ItemDetail
-              item = {this.state.selectedItem}
-              handleEditClickV1 = {this.handleEditClickOrigin}/>;
-        buttonText = 'Return to Item List';
-        break;
-      case 'form':
-        currentlyVisibleState = <NewItemForm AddItemToListV1 = {this.AddItemToListOrigin}/>;
-        buttonText = 'Return to Item List';
-        break;
-      case 'itemList':
-        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
-        buttonText = 'Add an Item';
-        break;
-      default:
-        currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
-        buttonText = 'Add an Item';
-        break;
+    if (this.state.editing) {
+      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} editItemV1 = {this.editItemOrigin} />;
+      buttonText = 'Return to Item List';
+    }
+    
+    else if (this.state.selectedItem != null) {
+      currentlyVisibleState = <ItemDetail
+                                item = {this.state.selectedItem}
+                                handleEditClickV1 = {this.handleEditClickOrigin}
+                                deleteItemV1 = {this.deleteItemOrigin}/>;
+      buttonText = 'Return to Item List';
     }
 
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewItemForm AddItemToListV1 = {this.AddItemToListOrigin}/>;
+      buttonText = 'Return to Item List';
+    }
+
+    else {
+      currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
+      buttonText = 'Add an Item';
+    }
+    
     return (
-      <>
+      <React.Fragment>
         {currentlyVisibleState}
         <button onClick = {this.handleClick}>{buttonText}</button>
-      </>
-    )
+      </React.Fragment>
+    );
   }
 }
 
