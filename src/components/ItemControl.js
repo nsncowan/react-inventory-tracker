@@ -25,6 +25,9 @@ class ItemControl extends React.Component {
       case 'form':
         nextState = 'list';
         break;
+      case 'list':
+        nextState = 'form';
+        break;
       default:
         nextState = 'list';
         break;
