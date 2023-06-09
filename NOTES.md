@@ -7,10 +7,15 @@
       - item list
           - item detail button - redirect
           - add item button - redirect
+          - item.js 
       - new item form
       - item detail - current quantity 
       - update item
           - sell quantity of item (button to sell)
+
+FUNCTIONS
+
+(ItemControl) changeSelectedItemOrigin ==> (ItemList) changeSelectedItemV1 ==> (Item) changeSelectedItemV2
 
 
 ## workflow
