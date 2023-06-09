@@ -2,6 +2,7 @@ import React from "react";
 import ItemList from "./ItemList";
 import NewItemForm from "./NewItemForm";
 import ItemDetail from "./ItemDetail";
+import EditItemForm from "./EditItemForm";
 
 
 
@@ -50,6 +51,24 @@ class ItemControl extends React.Component {
     this.setState({selectedItem: selectedItem});
   }
 
+  reduceStockOrigin = (id) => {
+    const { mainItemList } = this.state;
+    const editedMainItemList = mainItemList.map(item => {
+      if (item.id === id) {
+        const reducedStock = (item.stock === 0) ? 0 : item.stock - 1;
+        return {...item, stock: reducedStock};
+      }
+      return item;
+    });
+    this.setState({
+      mainItemList: editedMainItemList,
+      editing: false,
+      selectedItem: null
+    });
+  }
+
+
+
   deleteItemOrigin = (id) => {
     const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
     this.setState({
@@ -68,8 +87,6 @@ class ItemControl extends React.Component {
       selectedItem: null
     });
   }
-
-
 
   render (){
     let currentlyVisibleState = null;
