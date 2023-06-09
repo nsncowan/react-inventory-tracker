@@ -9,9 +9,9 @@ function Item(props) {
         <h3>Origin: {props.origin}</h3>
         <h3>Roast: {props.roast}</h3>
         <h3>Price: ${props.price}</h3>
-        <h3>Stock: {props.stock}</h3> // maybe include ternary for 'out of stock' or 'low stock' message
+        <h3>Stock: {props.stock}</h3>
       </div>
-      {/* <button onClick={props.sellItemFunction(props.id)}>Sell Item</button> */}
+      <button onClick={props.reduceStockProp2(props.id)}>Sell Item</button>
       <hr />
     </React.Fragment>
   );
@@ -23,9 +23,9 @@ Item.propTypes = {
   roast: PropTypes.string,
   price: PropTypes.number,
   stock: PropTypes.number,
-  // id: PropTypes.string,
-  changeSelectedItemProp2: PropTypes.func
-  // sellItemFunction: PropTypes.func
+  id: PropTypes.string,
+  changeSelectedItemProp2: PropTypes.func,
+  reduceStockProp2: PropTypes.func
 };
 
 export default Item;

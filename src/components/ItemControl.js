@@ -5,8 +5,6 @@ import ItemDetail from "./ItemDetail";
 import EditItemForm from "./EditItemForm";
 
 
-
-
 class ItemControl extends React.Component {
 
   constructor(props) {
@@ -67,8 +65,6 @@ class ItemControl extends React.Component {
     });
   }
 
-
-
   deleteItemOrigin = (id) => {
     const newMainItemList = this.state.mainItemList.filter(item => item.id !== id);
     this.setState({
@@ -111,7 +107,10 @@ class ItemControl extends React.Component {
     }
 
     else {
-      currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemProp1 = {this.changeSelectedItemOrigin}/>;
+      currentlyVisibleState = <ItemList 
+                                itemList = {this.state.mainItemList} 
+                                changeSelectedItemProp1 = {this.changeSelectedItemOrigin}
+                                reduceStockProp1 = {this.reduceStockOrigin} />;
       buttonText = 'Add an Item';
     }
     

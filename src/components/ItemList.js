@@ -10,7 +10,7 @@ function ItemList(props) {
       {props.itemList.map((item) => 
         <Item
           changeSelectedItemProp2 = {props.changeSelectedItemProp1}
-          // sellItemFunctionV2 = {props.sellItemFunctionV1} 
+          reduceStockProp2 = {props.reduceStockProp1} 
           name={item.name}
           origin = {item.origin}
           price = {item.price}
@@ -25,7 +25,7 @@ function ItemList(props) {
 ItemList.propTypes = {
   itemList: PropTypes.array,
   changeSelectedItemProp1: PropTypes.func,
-  // sellItemFunctionV1: PropTypes.func
+  reduceStockProp1: PropTypes.func
 };
 
 export default ItemList;
