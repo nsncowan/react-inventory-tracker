@@ -76,25 +76,25 @@ class ItemControl extends React.Component {
     let buttonText = null;
 
     if (this.state.editing) {
-      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} editItemV1 = {this.editItemOrigin} />;
+      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} editItemProp1 = {this.editItemOrigin} />;
       buttonText = 'Return to Item List';
     }
     
     else if (this.state.selectedItem != null) {
       currentlyVisibleState = <ItemDetail
                                 item = {this.state.selectedItem}
-                                handleEditClickV1 = {this.handleEditClickOrigin}
-                                deleteItemV1 = {this.deleteItemOrigin}/>;
+                                handleEditClickProp1 = {this.handleEditClickOrigin}
+                                deleteItemProp1 = {this.deleteItemOrigin}/>;
       buttonText = 'Return to Item List';
     }
 
     else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewItemForm AddItemToListV1 = {this.AddItemToListOrigin}/>;
+      currentlyVisibleState = <NewItemForm AddItemToListProp1 = {this.AddItemToListOrigin}/>;
       buttonText = 'Return to Item List';
     }
 
     else {
-      currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemV1 = {this.changeSelectedItemOrigin}/>;
+      currentlyVisibleState = <ItemList itemList = {this.state.mainItemList} changeSelectedItemProp1 = {this.changeSelectedItemOrigin}/>;
       buttonText = 'Add an Item';
     }
     

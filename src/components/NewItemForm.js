@@ -7,17 +7,19 @@ function NewItemForm(props){
 
   function handleNewItemFormSubmissionOrigin(event) {
     event.preventDefault();
-    props.AddItemToListV1({
+    props.AddItemToListProp1({
       name: event.target.name.value,
       origin: event.target.origin.value,
+      roast: event.target.roast.value,
       price: event.target.price.value,
+      stock: event.target.stock.value,
       id: v4()
     });
   }
   return (
     <React.Fragment>
       <ReusableForm 
-        handleNewItemFormSubmissionV1={handleNewItemFormSubmissionOrigin}
+        formSubmissionHandler={handleNewItemFormSubmissionOrigin}
         buttonText="Add Item!" />
     </React.Fragment>
   );
@@ -26,7 +28,7 @@ function NewItemForm(props){
 
 // add PropTypes in lesson 36
 NewItemForm.propTypes = {
-  AddItemToListV1: PropTypes.func
+  AddItemToListProp1: PropTypes.func
 };
 
 export default NewItemForm;

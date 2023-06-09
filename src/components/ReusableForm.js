@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function ReusableForm(props) {
   return (
     <React.Fragment>
-      <form onSubmit={props.handleNewItemFormSubmissionV1}>
+      <form onSubmit={props.formSubmissionHandler}>
         <input
           type="text"
           name="name"
@@ -14,16 +14,25 @@ function ReusableForm(props) {
           name="origin"
           placeholder="Item Origin"/>
         <input
+          type="text"
+          name="roast"
+          placeholder="Item Roast"/>
+        <input
           type="number"
           name="price"
           placeholder="Item Price"/>
+        <input
+          type="number"
+          name="stock"
+          placeholder="Amount Currently in Stock"/>
+        <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
   );
 }
 
 ReusableForm.propTypes = {
-  handleNewItemFormSubmissionV1: PropTypes.func,
+  formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 };
 

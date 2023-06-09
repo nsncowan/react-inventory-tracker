@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function Item(props) {
   return (
     <React.Fragment>
-      <div onClick = {() => props.changeSelectedItemV2(props.id)}>
+      <div onClick = {() => props.changeSelectedItemProp2(props.id)}>
         <h3>{props.name}</h3>
         <h3>Origin: {props.origin}</h3>
         <h3>Roast: {props.roast}</h3>
@@ -24,7 +24,7 @@ Item.propTypes = {
   price: PropTypes.number,
   stock: PropTypes.number,
   // id: PropTypes.string,
-  changeSelectedItemV2: PropTypes.func
+  changeSelectedItemProp2: PropTypes.func
   // sellItemFunction: PropTypes.func
 };
 

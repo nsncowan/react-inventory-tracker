@@ -9,7 +9,7 @@ function ItemList(props) {
       <hr />
       {props.itemList.map((item) => 
         <Item
-          changeSelectedItemV2 = {props.changeSelectedItemV1}
+          changeSelectedItemProp2 = {props.changeSelectedItemProp1}
           // sellItemFunctionV2 = {props.sellItemFunctionV1} 
           name={item.name}
           origin = {item.origin}
@@ -24,7 +24,7 @@ function ItemList(props) {
 
 ItemList.propTypes = {
   itemList: PropTypes.array,
-  changeSelectedItemV1: PropTypes.func,
+  changeSelectedItemProp1: PropTypes.func,
   // sellItemFunctionV1: PropTypes.func
 };
 
