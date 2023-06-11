@@ -50,8 +50,7 @@ class ItemControl extends React.Component {
   }
 
   reduceStockOrigin = (id) => {
-    const { mainItemList } = this.state;
-    const editedMainItemList = mainItemList.map(item => {
+    const editedMainItemList = this.state.mainItemList.map(item => {
       if (item.id === id) {
         const reducedStock = (item.stock === 0) ? 0 : item.stock - 1;
         return {...item, stock: reducedStock};
@@ -89,7 +88,7 @@ class ItemControl extends React.Component {
     let buttonText = null;
 
     if (this.state.editing) {
-      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} editItemProp1 = {this.editItemOrigin} />;
+      currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} editItemProp1 = {this.editItemOrigin} />
       buttonText = 'Return to Item List';
     }
     
@@ -97,12 +96,12 @@ class ItemControl extends React.Component {
       currentlyVisibleState = <ItemDetail
                                 item = {this.state.selectedItem}
                                 handleEditClickProp1 = {this.handleEditClickOrigin}
-                                deleteItemProp1 = {this.deleteItemOrigin}/>;
+                                deleteItemProp1 = {this.deleteItemOrigin}/>
       buttonText = 'Return to Item List';
     }
 
     else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewItemForm AddItemToListProp1 = {this.AddItemToListOrigin}/>;
+      currentlyVisibleState = <NewItemForm AddItemToListProp1 = {this.AddItemToListOrigin}/>
       buttonText = 'Return to Item List';
     }
 
@@ -110,8 +109,8 @@ class ItemControl extends React.Component {
       currentlyVisibleState = <ItemList 
                                 itemList = {this.state.mainItemList} 
                                 changeSelectedItemProp1 = {this.changeSelectedItemOrigin}
-                                reduceStockProp1 = {this.reduceStockOrigin} />;
-      buttonText = 'Add an Item';
+                                reduceStockProp1 = {this.reduceStockOrigin} />
+      buttonText = 'Add Item';
     }
     
     return (

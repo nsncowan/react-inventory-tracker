@@ -17,7 +17,7 @@ function ItemList(props) {
           stock = {item.stock}
           id={item.id}
           key={item.id} />
-      )}
+    )}
     </React.Fragment>
   );
 }
