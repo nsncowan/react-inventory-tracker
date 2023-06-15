@@ -59,8 +59,8 @@ class ItemControl extends React.Component {
     });
     this.setState({
       mainItemList: editedMainItemList,
-      editing: false,
-      selectedItem: null
+      // editing: false,
+      // selectedItem: null
     });
   }
 

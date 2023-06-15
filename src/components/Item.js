@@ -11,7 +11,7 @@ function Item(props) {
         <h3>Price: ${props.price}</h3>
         <h3>Stock: {props.stock}</h3>
       </div>
-      <button onClick={props.reduceStockProp2(props.id)}>Sell Item</button>
+      <button onClick={() => props.reduceStockProp2(props.id)}>Sell Item</button>
       <hr />
     </React.Fragment>
   );
