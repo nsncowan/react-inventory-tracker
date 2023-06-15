@@ -3,6 +3,7 @@ import ItemList from "./ItemList";
 import NewItemForm from "./NewItemForm";
 import ItemDetail from "./ItemDetail";
 import EditItemForm from "./EditItemForm";
+import { v4 } from 'uuid';
 
 
 class ItemControl extends React.Component {
@@ -11,7 +12,7 @@ class ItemControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainItemList: [],
+      mainItemList: startingInventory,
       selectedItem: null,
       editing: false
     };
@@ -121,5 +122,36 @@ class ItemControl extends React.Component {
     );
   }
 }
+
+let startingInventory = [
+  {
+    name: "Bistro Blend",
+    origin: "Guatamala",
+    price: 12,
+    stock: 110,
+    id: v4()
+  },
+  {
+    name: "Gayo River",
+    origin: "Sumatra",
+    price: 14,
+    stock: 96,
+    id: v4()
+  },
+  {
+    name: "Major Domo",
+    origin: "Honduras",
+    price: 11,
+    stock: 84,
+    id: v4()
+  },
+  {
+    name: "Tropic Thunder",
+    origin: "Costa Rica",
+    price: 10,
+    stock: 78,
+    id: v4()
+  },
+]
 
 export default ItemControl;

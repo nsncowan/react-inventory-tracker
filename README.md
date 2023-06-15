@@ -10,6 +10,9 @@
 ## Description
 This is a mock application to track the current inventory in a store. The user can add, update, view, and delete inventory. The user can also sell stock of the inventory unit by unit. 
 
+## Component Map
+![App Component Map](react-inventory-tracker-map.drawio.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
