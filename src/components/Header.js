@@ -4,7 +4,7 @@ import React from "react";
 function Header(){
   return (
     <React.Fragment>
-    <h1>Inventory App</h1>
+    <h1>Coffee Roaster Inventory App</h1>
     {/* <img src={ticketsImage} alt="An image of tickets" /> */}
     </React.Fragment>
   );
