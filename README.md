@@ -19,11 +19,15 @@ This is a mock application to track the current inventory in a store. The user c
 
 ## Setup/Installation Requirements
 
-* Clone the repository to your desktop.
+* Clone the repository to your desktop by opening your terminal and entering:
+```
+  git clone https://github.com/nsncowan/react-inventory-tracker.git
+```
 * Navigate to the project's top directory in your terminal.
 * enter `npm install` to install all dependencies
 * to generate a bundled package of the project, enter `npm run build`
 * to set up a development server, enter `npm run start`
+* to view the code, open the project in an IDE of your choice.
 
 ## Known Bugs
 None
