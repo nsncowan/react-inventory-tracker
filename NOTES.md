@@ -34,3 +34,11 @@ FUNCTIONS
   - functionNameOrigin
   - functionNameV1
   - functionNameV2 ...etc
+
+
+  ## Bug Fix
+
+  The following function was running in an infinite loop because I was not using an anonymous arrow function. The CORRECTED syntax is below:
+```jsx
+<button onClick={() => props.reduceStockProp2(props.id)}>Sell Item</button> {/* // needed to change syntax: review lesson */}
+```

@@ -13,6 +13,7 @@ function ItemList(props) {
           reduceStockProp2 = {props.reduceStockProp1} 
           name={item.name}
           origin = {item.origin}
+          roast = {item.roast}
           price = {item.price}
           stock = {item.stock}
           id={item.id}

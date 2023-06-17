@@ -8,7 +8,7 @@ function EditItemForm (props) {
   function editItemFormSubmissionOrigin(event) {
     event.preventDefault();
     props.editItemProp1({
-      name: event.target.names.value,
+      name: event.target.name.value,
       origin: event.target.origin.value,
       roast: event.target.roast.value,
       price: parseInt(event.target.price.value),

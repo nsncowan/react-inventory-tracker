@@ -127,6 +127,7 @@ let startingInventory = [
   {
     name: "Bistro Blend",
     origin: "Guatamala",
+    roast: "dark",
     price: 12,
     stock: 110,
     id: v4()
@@ -134,6 +135,7 @@ let startingInventory = [
   {
     name: "Gayo River",
     origin: "Sumatra",
+    roast: "medium",
     price: 14,
     stock: 96,
     id: v4()
@@ -141,6 +143,7 @@ let startingInventory = [
   {
     name: "Major Domo",
     origin: "Honduras",
+    roast: "medium",
     price: 11,
     stock: 84,
     id: v4()
@@ -148,6 +151,7 @@ let startingInventory = [
   {
     name: "Tropic Thunder",
     origin: "Costa Rica",
+    roast: "light",
     price: 10,
     stock: 78,
     id: v4()
