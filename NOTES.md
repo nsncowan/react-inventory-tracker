@@ -36,7 +36,7 @@ FUNCTIONS
   - functionNameV2 ...etc
 
 
-  ## Bug Fix
+  ## Bug Fix - in Item.js
 
   The following function was running in an infinite loop because I was not using an anonymous arrow function. The CORRECTED syntax is below:
 ```jsx
